@@ -38,10 +38,9 @@ url_list = []
 for items in reponse['items']:
     for video in items['id'].items():
         if video[0]=='videoId':
-            print(video[1]) 
             url_list.append(video[1])
 
-number = random.randint(0,4)
+number = random.randint(0,len(url_list)-1)
 
 url=url+'{}'.format(url_list[number])
 webbrowser.get(chpath).open(url)
